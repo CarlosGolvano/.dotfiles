@@ -6,7 +6,7 @@ My config for my Development Environment.
 I am using:
 
 * Neovim
-* zsh &#8594 [config web](https://thevaluable.dev/zsh-install-configure/)
+* zsh &#8594; [config web](https://thevaluable.dev/zsh-install-configure/)
 
 ## WARNING
 
