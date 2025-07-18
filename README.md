@@ -28,9 +28,13 @@ Personal Linux development environment configuration.
 
 ```bash
 # Backup current configs
-cp you/config/files
+cp -r .you/config/files
 
 # Install (or pick specific components)
 ./install.sh
 ```
+
+## Credits
+
+Structure and installation scripts inspired by [Phantas0s/.dotfiles](https://github.com/Phantas0s/.dotfiles). Many installation scripts adapted from this excellent repository.
 
