@@ -1,15 +1,36 @@
-#  Doftiles
+# 🦆 Dotfiles
 
-## What's in there?
+Personal Linux development environment configuration.
 
-My config for my Development Environment.
-I am using:
+## What's included
 
-* Neovim
-* zsh &#8594; [config web](https://thevaluable.dev/zsh-install-configure/)
+- **Zsh** with intelligent completion and syntax highlighting
+- **Starship prompt** with duck emoji hostname
+- **Kitty terminal** with optimized keybindings
+- **JetBrainsMono Nerd Font**
+- **Pastel color scheme** across all components
 
-## WARNING
+## Structure
 
-There are no backup system. If you install this on top of your dotfiles, expect a big mess.
-You shouldn't use the `install.sh` script. You should only pick whatever you want and include it in your own config.
+```
+├── zsh/              # Zsh configuration and plugins
+├── kitty/            # Kitty terminal config
+├── config/           # Starship and other app configs
+├── fonts/            # JetBrainsMono Nerd Font
+├── aliases/          # Shell aliases
+├── install/          # Component-specific installers
+└── install.sh        # Main installer
+```
+
+## Installation
+
+⚠️ **Backup first**: No backup system included.
+
+```bash
+# Backup current configs
+cp you/config/files
+
+# Install (or pick specific components)
+./install.sh
+```
 
