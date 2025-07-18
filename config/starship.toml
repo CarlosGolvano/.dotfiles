@@ -1,0 +1,115 @@
+# ====================================
+# STARSHIP CONFIGURATION
+# ====================================
+
+# Global settings
+format = """
+$username@$hostname:$directory ❯ """
+
+# Disable the blank line at the start of the prompt
+add_newline = false
+
+# Username module
+[username]
+style_user = "bold blue"
+style_root = "bold red"
+format = "[$user]($style)"
+disabled = false
+show_always = true
+
+# Hostname module
+[hostname]
+ssh_only = false
+format = "[🦆]($style)"
+style = "bold blue"
+disabled = false
+
+# Directory module
+[directory]
+style = "bold cyan"
+truncation_length = 3
+truncate_to_repo = false
+format = "[$path]($style)[$read_only]($read_only_style)"
+
+# Disable git modules (as requested)
+[git_branch]
+disabled = true
+
+[git_commit]
+disabled = true
+
+[git_state]
+disabled = true
+
+[git_metrics]
+disabled = true
+
+[git_status]
+disabled = true
+
+# Disable other modules you probably don't need
+[aws]
+disabled = true
+
+[azure]
+disabled = true
+
+[conda]
+disabled = true
+
+[docker_context]
+disabled = true
+
+[dotnet]
+disabled = true
+
+[elixir]
+disabled = true
+
+[elm]
+disabled = true
+
+[golang]
+disabled = true
+
+[java]
+disabled = true
+
+[julia]
+disabled = true
+
+[kubernetes]
+disabled = true
+
+[nodejs]
+disabled = true
+
+[package]
+disabled = true
+
+[perl]
+disabled = true
+
+[php]
+disabled = true
+
+[python]
+disabled = true
+
+[ruby]
+disabled = true
+
+[rust]
+disabled = true
+
+[swift]
+disabled = true
+
+[terraform]
+disabled = true
+
+[vagrant]
+disabled = true
+
+[zig]
+disabled = true

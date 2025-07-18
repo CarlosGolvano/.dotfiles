@@ -36,3 +36,10 @@ alias dust='du -sh * | sort -hr'
 
 alias gc='git commit -m "Update"'
 
+# +------+
+# | NVIM |
+# +------+
+
+# Better nvim integration
+alias vim="nvim"
+alias vi="nvim"
