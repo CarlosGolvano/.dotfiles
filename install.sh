@@ -28,7 +28,7 @@ ${yellow}
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠤⢽⣿⡀⠤⠃⠀⢀⡀⠼⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠀⠀⠀⠀⠐⡛⠗⠐⠚⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 +------------------------------+
-|  Welcome to ${blue}golvin ${magenta}dotfiles${default} |
+|  Welcome to ${blue}golvin ${magenta}dotfiles${default}  |
 +------------------------------+
 
 "
