@@ -4,7 +4,7 @@
 
 # Global settings
 format = """
-$username@$hostname:$directory ❯ """
+$username@$hostname:$directory$python ❯ """
 
 # Disable the blank line at the start of the prompt
 add_newline = false
@@ -94,7 +94,11 @@ disabled = true
 disabled = true
 
 [python]
-disabled = true
+format = " [($virtualenv)]($style)"
+style = "bold green"
+pyenv_version_name = false
+pyenv_prefix = ""
+disabled = false
 
 [ruby]
 disabled = true
