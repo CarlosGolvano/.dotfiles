@@ -4,10 +4,12 @@
 
 # Global settings
 format = """
-$username@$hostname:$directory$python ❯ """
+$username@$hostname:$directory ❯ """
 
 # Disable the blank line at the start of the prompt
 add_newline = false
+
+right_format = "$custom"
 
 # Username module
 [username]
@@ -94,11 +96,16 @@ disabled = true
 disabled = true
 
 [python]
-format = " [($virtualenv)]($style)"
-style = "bold green"
-pyenv_version_name = false
-pyenv_prefix = ""
-disabled = false
+disabled = true
+
+[custom.python_name]
+# Sólo mostrar si VIRTUAL_ENV existe
+when = '[[ -n "$VIRTUAL_ENV" ]]'
+# Extraer el nombre del directorio padre del virtualenv
+command = 'basename $(dirname "$VIRTUAL_ENV")'
+format = '${symbol}\($output\)'
+style = 'yellow bold'
+symbol = '🐍'
 
 [ruby]
 disabled = true

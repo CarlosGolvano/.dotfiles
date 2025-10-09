@@ -18,6 +18,15 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
 
+
+# +----+
+# | ls |
+# +----+
+
+alias l='ls'
+alias ll='ls -l'
+alias lrt='ls -lart'
+
 # +------+
 # | grep |
 # +------+
@@ -43,3 +52,10 @@ alias gc='git commit -m "Update"'
 # Better nvim integration
 alias vim="nvim"
 alias vi="nvim"
+
+# +-----+
+# | SSH |
+# +-----+
+
+# OEG Virtual Machine
+alias minetur="ssh cgolvano@minetur.dia.fi.upm.es -p 2222"
