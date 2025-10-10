@@ -23,6 +23,7 @@ alias ......='cd ../../../../..'
 # | ls |
 # +----+
 
+alias ls='lsd'
 alias l='ls'
 alias ll='ls -l'
 alias lrt='ls -lart'
