@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="40" viewBox="0 0 700 40">
+  <rect width="700" height="40" fill="#1e1e2e" rx="6"/>
+  <text x="10" y="27" font-family="JetBrainsMono Nerd Font, monospace" font-size="16" font-weight="bold">
+    <tspan fill="#5b9bf5">carlos@🦆:</tspan><tspan fill="#00bcd4">~/workspace/my_project</tspan><tspan fill="#cdd6f4"> ❯ </tspan><tspan fill="#cdd6f4">touch foo           </tspan><tspan fill="#ffd700">🐲(my_project)</tspan>
+  </text>
+</svg>

@@ -1,0 +1,75 @@
+#!/usr/bin/env bash
+
+# +--------+
+# | System |
+# +--------+
+
+alias shutdown='sudo shutdown now'
+alias restart='sudo reboot'
+alias suspend='sudo pm-suspend'
+
+# +----+
+# | cd |
+# +----+
+
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias ......='cd ../../../../..'
+
+
+# +----+
+# | ls |
+# +----+
+
+alias ls='lsd'
+alias l='ls'
+alias ll='ls -l'
+alias lrt='ls -lart'
+
+# +------+
+# | grep |
+# +------+
+
+alias grep='grep -P -i --color=auto'
+
+# +------+
+# | dust |
+# +------+
+
+alias dust='du -sh * | sort -hr'
+
+# +-----+
+# | git |
+# +-----+
+
+alias gc='git commit -m "Update"'
+
+# +------+
+# | NVIM |
+# +------+
+
+# Better nvim integration
+alias vim="nvim"
+alias vi="nvim"
+
+# +-------+
+# | conda |
+# +-------+
+
+alias conda-activate="conda activate ./.venv"
+alias conda-create-fix="$DOTFILES/conda/conda_create_fix_clear.sh"
+
+# +-------+
+# | local |
+# +-------+
+# Local and customized aliases
+# [...]
+
+# +-----------+
+# | local-SSH |
+# +-----------+
+# Local ssh connections
+# [...]
+

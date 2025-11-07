@@ -1,0 +1,145 @@
+#!/usr/bin/env zsh
+
+# ====================================
+# ZSH CONFIGURATION
+# ====================================
+
+# +--------+
+# | BASICS |
+# +--------+
+
+# Add plugins to function path
+fpath=($DOTFILES/zsh/plugins $fpath)
+
+# +------------+
+# | COMPLETION |
+# +------------+
+
+# Load completion system
+source $DOTFILES/zsh/completion.zsh
+
+# +---------+
+# | HISTORY |
+# +---------+
+
+# History settings
+setopt EXTENDED_HISTORY          # Write the history file in the ':start:elapsed;command' format
+setopt SHARE_HISTORY             # Share history between all sessions
+setopt HIST_EXPIRE_DUPS_FIRST    # Expire a duplicate event first when trimming history
+setopt HIST_IGNORE_DUPS          # Do not record an event that was just recorded again
+setopt HIST_IGNORE_ALL_DUPS      # Delete an old recorded event if a new event is a duplicate
+setopt HIST_FIND_NO_DUPS         # Do not display a previously found event
+setopt HIST_IGNORE_SPACE         # Do not record an event starting with a space
+setopt HIST_SAVE_NO_DUPS         # Do not write a duplicate event to the history file
+setopt HIST_VERIFY               # Do not execute immediately upon history expansion
+
+# +---------+
+# | ALIASES |
+# +---------+
+
+# Load aliases
+source $DOTFILES/aliases/aliases.local
+
+# +--------+
+# | PROMPT |
+# +--------+
+
+# Initialize Starship prompt
+eval "$(starship init zsh)"
+
+# +------------+
+# | NAVIGATION |
+# +------------+
+
+setopt AUTO_CD              # Go to folder path without using cd
+setopt AUTO_PUSHD           # Push the old directory onto the stack on cd
+setopt PUSHD_IGNORE_DUPS    # Do not store duplicates in the stack
+setopt PUSHD_SILENT         # Do not print the directory stack after pushd or popd
+setopt CDABLE_VARS          # Change directory to a path stored in a variable
+setopt PUSHD_TO_HOME        # Push to home directory when no argument is given
+
+# +--------+
+# | EDITOR |
+# +--------+
+
+# Set nvim as default editor (already in zshenv, but good to have)
+export EDITOR="nvim"
+export VISUAL="nvim"
+
+# +-------------+
+# | DEVELOPMENT |
+# +-------------+
+
+# Better globbing
+setopt EXTENDED_GLOB        # Use extended globbing syntax
+setopt GLOB_DOTS            # Include dotfiles in glob patterns
+
+# +------+
+# | NVIM |
+# +------+
+
+# Better nvim integration
+alias vim="nvim"
+alias vi="nvim"
+
+# +-----------+
+# | FUNCTIONS |
+# +-----------+
+
+# Load custom functions
+source $DOTFILES/zsh/functions.zsh
+
+# +---------+
+# | KEYBINDS |
+# +---------+
+
+# Ctrl+X+E to edit command in nvim
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey '^X^E' edit-command-line
+
+# Ctrl+Z to bring background process to foreground
+fancy-ctrl-z() {
+  if [[ $#BUFFER -eq 0 ]]; then
+    BUFFER="fg"
+    zle accept-line
+  else
+    zle push-input
+    zle clear-screen
+  fi
+}
+zle -N fancy-ctrl-z
+bindkey '^Z' fancy-ctrl-z
+
+# +---------------------+
+# | SYNTAX HIGHLIGHTING |
+# +---------------------+
+
+# Highlight commands (install with: git clone https://github.com/zsh-users/zsh-syntax-highlighting.git)
+if [[ -f $DOTFILES/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
+    source $DOTFILES/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
+
+# +-------+
+# | conda |
+# +-------+
+
+# export PATH="/home/carlos/miniconda3/bin:$PATH"  # commented out by conda initialize  # commented out by conda initialize
+# source ~/miniconda3/etc/profile.d/conda.sh  # commented out by conda initialize
+
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/carlos/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/carlos/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/carlos/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/carlos/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
