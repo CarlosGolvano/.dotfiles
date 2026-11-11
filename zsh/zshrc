@@ -93,6 +93,19 @@ source $DOTFILES/zsh/functions.zsh
 # | KEYBINDS |
 # +---------+
 
+# Home / End / Delete behave like in an editor.
+# Bind every common sequence (normal and application cursor mode) so it works
+# in kitty, other terminals, tmux and the Linux console.
+bindkey '^[[H'  beginning-of-line   # Home
+bindkey '^[OH'  beginning-of-line
+bindkey '^[[1~' beginning-of-line
+bindkey '^[[7~' beginning-of-line
+bindkey '^[[F'  end-of-line         # End
+bindkey '^[OF'  end-of-line
+bindkey '^[[4~' end-of-line
+bindkey '^[[8~' end-of-line
+bindkey '^[[3~' delete-char         # Delete
+
 # Ctrl+X+E to edit command in nvim
 autoload -Uz edit-command-line
 zle -N edit-command-line
