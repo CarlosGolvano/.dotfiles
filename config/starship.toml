@@ -59,15 +59,6 @@ disabled = true
 [conda]
 disabled = true
 
-[custom.conda_name]
-when = '[[ -n "$CONDA_PREFIX" ]]'
-command = 'basename $(dirname "$CONDA_PREFIX")'
-format = '[$symbol\($output\)]($style)'
-symbol = '🐲'
-style = 'bold yellow'
-# Deshabilita el prefijo propio de conda (muy importante)
-# conda config --set changeps1 false
-
 [docker_context]
 disabled = true
 

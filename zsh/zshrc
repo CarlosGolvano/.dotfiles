@@ -93,6 +93,19 @@ source $DOTFILES/zsh/functions.zsh
 # | KEYBINDS |
 # +---------+
 
+# Home / End / Delete behave like in an editor.
+# Bind every common sequence (normal and application cursor mode) so it works
+# in kitty, other terminals, tmux and the Linux console.
+bindkey '^[[H'  beginning-of-line   # Home
+bindkey '^[OH'  beginning-of-line
+bindkey '^[[1~' beginning-of-line
+bindkey '^[[7~' beginning-of-line
+bindkey '^[[F'  end-of-line         # End
+bindkey '^[OF'  end-of-line
+bindkey '^[[4~' end-of-line
+bindkey '^[[8~' end-of-line
+bindkey '^[[3~' delete-char         # Delete
+
 # Ctrl+X+E to edit command in nvim
 autoload -Uz edit-command-line
 zle -N edit-command-line
@@ -125,27 +138,3 @@ fi
 # +------+
 
 export SUDO_EDITOR=nvim
-
-# +-------+
-# | conda |
-# +-------+
-
-# export PATH="/home/carlos/miniconda3/bin:$PATH"  # commented out by conda initialize  # commented out by conda initialize
-# source ~/miniconda3/etc/profile.d/conda.sh  # commented out by conda initialize
-
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/carlos/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/carlos/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/carlos/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/carlos/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-

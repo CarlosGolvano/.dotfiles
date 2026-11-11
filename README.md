@@ -39,10 +39,6 @@ cp -r .you/config/files
 
 ![Default prompt](./assets/prompt-default.svg)
 
-**Conda environment:**
-
-![Conda prompt](./assets/prompt-conda.svg)
-
 **Python virtual environment:**
 
 ![Python prompt](./assets/prompt-python.svg)

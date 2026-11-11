@@ -55,13 +55,6 @@ alias vim="nvim"
 alias vi="nvim"
 
 # +-------+
-# | conda |
-# +-------+
-
-alias conda-activate="conda activate ./.venv"
-alias conda-create-fix="$DOTFILES/conda/conda_create_fix_clear.sh"
-
-# +-------+
 # | local |
 # +-------+
 # Local and customized aliases

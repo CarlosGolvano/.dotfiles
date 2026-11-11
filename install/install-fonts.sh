@@ -4,5 +4,5 @@
 mkdir -p "$XDG_DATA_HOME/fonts"
 
 for src in "$DOTFILES/fonts/fonts"/*; do
-  ln -sf "$src" "$XDG_DATA_HOME/fonts/$(basename "$src")"
+  ln -sfn "$src" "$XDG_DATA_HOME/fonts/$(basename "$src")"
 done
