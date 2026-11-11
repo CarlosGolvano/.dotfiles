@@ -120,6 +120,12 @@ if [[ -f $DOTFILES/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.z
     source $DOTFILES/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 
+# +------+
+# | sudo |
+# +------+
+
+export SUDO_EDITOR=nvim
+
 # +-------+
 # | conda |
 # +-------+
