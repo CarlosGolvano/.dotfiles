@@ -20,6 +20,10 @@ export HISTFILE="$ZDOTDIR/.zhistory"    # History filepath
 export HISTSIZE=10000                   # Maximum events for internal history
 export SAVEHIST=10000                   # Maximum events in history file
 
+# path
+typeset -U path                        # No duplicate entries
+path=("$HOME/.local/bin" $path)
+
 # tmp
 export TMPDIR=/tmp
 

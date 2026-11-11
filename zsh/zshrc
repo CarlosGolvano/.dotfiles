@@ -125,9 +125,3 @@ fi
 # +------+
 
 export SUDO_EDITOR=nvim
-
-# +--------+
-# | claude |
-# +--------+
-
-export PATH="$HOME/.local/bin:$PATH"
