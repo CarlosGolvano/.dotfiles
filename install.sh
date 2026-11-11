@@ -52,7 +52,10 @@ fi
 # INSTALL #
 ###########
 
+git -C "$DOTFILES" submodule update --init --recursive
+
 . "$DOTFILES/install/install-zsh.sh"
+. "$DOTFILES/install/install-aliases.sh"
 . "$DOTFILES/install/install-fonts.sh"
 
 dot_is_installed kitty && dot_install kitty
